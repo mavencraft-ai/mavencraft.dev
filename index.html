@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mavencraft — AI Consulting</title>
+  <meta name="description" content="AI Strategy. Built on Expertise. Delivered with Craft.">
+  <meta property="og:title" content="Mavencraft — AI Consulting">
+  <meta property="og:description" content="AI Strategy. Built on Expertise. Delivered with Craft.">
+  <meta property="og:image" content="https://mavencraft.dev/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://mavencraft.dev">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#081422">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #081422;
+      --fg: #EAEAEA;
+      --fg-muted: rgba(234, 234, 234, 0.55);
+      --border: rgba(234, 234, 234, 0.1);
+      --card-bg: rgba(234, 234, 234, 0.04);
+      --card-hover: rgba(234, 234, 234, 0.07);
+      --accent: rgba(234, 234, 234, 0.18);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── Layout ── */
+    .container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 96px 0;
+    }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 24px;
+      text-align: center;
+      animation: fadeIn 1s ease both;
+    }
+
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .hero-logo {
+      width: 72px;
+      height: 72px;
+      flex-shrink: 0;
+    }
+
+    .hero-wordmark {
+      font-size: clamp(28px, 6vw, 52px);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--fg);
+      line-height: 1;
+    }
+
+    .hero-tagline {
+      font-size: clamp(14px, 2.2vw, 18px);
+      color: var(--fg-muted);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      max-width: 480px;
+    }
+
+    .hero-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+      margin: 4px auto 0;
+    }
+
+    /* ── Section headings ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 40px;
+    }
+
+    /* ── Services ── */
+    #services {
+      border-top: 1px solid var(--border);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px 28px;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .service-card:hover {
+      background: var(--card-hover);
+      border-color: var(--accent);
+    }
+
+    .service-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      margin-bottom: 10px;
+      color: var(--fg);
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--fg-muted);
+      line-height: 1.65;
+    }
+
+    /* ── About ── */
+    #about {
+      border-top: 1px solid var(--border);
+    }
+
+    .about-text {
+      font-size: clamp(15px, 2vw, 17px);
+      color: var(--fg-muted);
+      line-height: 1.8;
+      max-width: 680px;
+    }
+
+    /* ── Contact ── */
+    #contact {
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .contact-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .contact-link {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--fg);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      padding: 14px 32px;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .contact-link:hover {
+      background: var(--card-hover);
+      border-color: var(--fg-muted);
+    }
+
+    .contact-note {
+      font-size: 13px;
+      color: var(--fg-muted);
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--fg-muted);
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      section {
+        padding: 72px 0;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-inner">
+      <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024" aria-label="Mavencraft logo" role="img">
+        <path fill="#EAEAEA" d="M856.444 389.954C857.401 390.932 856.948 425.487 856.952 430.692L856.981 516.44L857.027 774.426C830.358 773.848 803.68 773.86 777.012 774.46C777.702 760.559 777.22 745.633 777.191 731.599L777.143 659.64L777.178 583.75C777.221 567.409 777.703 551.882 776.983 535.505C765.484 543.464 752.084 551.402 740.134 558.902L676.342 598.999L512.114 702.508C480.187 682.116 448.134 661.922 415.956 641.927L246.422 535.493C246.698 549.429 246.416 563.982 246.417 577.987L246.446 662.75L246.485 774.492C237.453 773.821 228.174 774.619 219.128 774.365C201.731 773.875 183.3 775.298 166.01 774.241L166.04 530.897L165.982 441.732C165.966 424.746 165.603 406.489 166.16 389.669C170.398 391.859 177.33 396.619 181.709 399.355L206.615 414.625L286.536 464.497C361.251 511.232 437.587 557.961 511.587 605.591C540.887 587.791 570.334 568.957 599.43 550.738L760.547 449.873L817.234 414.385C830.354 406.107 842.979 397.73 856.444 389.954Z"/>
+        <path fill="#EAEAEA" d="M856.471 206.989C857.649 208.671 856.89 297.651 856.42 305.028C849.928 309.913 840.519 315.417 833.45 319.795L800.014 340.721L682.52 414.571L568.796 486.117L534.678 507.794C527.515 512.349 519.352 517.821 511.879 521.585C499.94 515.008 484.102 504.329 472.181 496.85L394.635 448.157L168.268 306.547C167.768 306.254 167.205 305.906 166.864 305.422C164.034 301.398 165.849 218.188 166.11 207.016C170.807 209.447 177.744 214.182 182.472 217.159C192.075 223.194 201.708 229.179 211.373 235.114L306.7 293.518L441.607 376.752C463.908 390.508 490.378 405.939 511.957 420.3C527.336 410.067 545.965 399.133 561.897 389.297L659.494 329.086L789.029 248.899C811.535 234.928 833.738 220.584 856.471 206.989Z"/>
+      </svg>
+
+      <div>
+        <h1 class="hero-wordmark">Mavencraft</h1>
+        <div class="hero-divider"></div>
+      </div>
+
+      <p class="hero-tagline">AI Strategy. Built on Expertise. Delivered with Craft.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <p class="section-label">Services</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>AI Strategy</h3>
+          <p>Strategic AI adoption roadmaps tailored to your business — identifying high-value opportunities, mitigating risk, and sequencing execution.</p>
+        </div>
+        <div class="service-card">
+          <h3>Technical Architecture</h3>
+          <p>System design for AI-native applications — from data pipelines and model serving to evaluation frameworks and production observability.</p>
+        </div>
+        <div class="service-card">
+          <h3>Implementation</h3>
+          <p>Hands-on engineering and deployment of production AI systems — building what gets specced, not just scoping it.</p>
+        </div>
+        <div class="service-card">
+          <h3>Advisory</h3>
+          <p>Fractional CTO and technical advisor engagements — senior AI engineering perspective embedded in your team, on your timeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label">About</p>
+      <p class="about-text">
+        Mavencraft is an AI consulting practice founded by an engineer who builds production AI systems. We bring deep technical expertise to organizations navigating AI adoption — from strategy through deployment. We work with teams who want substance over slides: rigorous thinking, clean architecture, and systems that hold up in production.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <p class="section-label">Get in Touch</p>
+        <a class="contact-link" href="mailto:contact@mavencraft.dev">contact@mavencraft.dev</a>
+        <p class="contact-note">Available for new engagements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Mavencraft. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
