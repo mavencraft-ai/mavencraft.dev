@@ -3,74 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mavencraft — AI Consulting</title>
-  <meta name="description" content="AI Strategy. Built on Expertise. Delivered with Craft.">
-  <meta property="og:title" content="Mavencraft — AI Consulting">
-  <meta property="og:description" content="AI Strategy. Built on Expertise. Delivered with Craft.">
+  <title>Mavencraft — Production AI Systems</title>
+  <meta name="description" content="Production-grade AI. Engineered, not assembled. Agentic workflows, document intelligence, and integration engineering.">
+  <meta property="og:title" content="Mavencraft — Production AI Systems">
+  <meta property="og:description" content="Production-grade AI. Engineered, not assembled. Agentic workflows, document intelligence, and integration engineering.">
   <meta property="og:image" content="https://mavencraft.dev/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://mavencraft.dev">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#081422">
+  <meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
+    /* ── Light (default) ── */
     :root {
-      --bg: #081422;
-      --fg: #EAEAEA;
-      --fg-muted: rgba(234, 234, 234, 0.55);
-      --border: rgba(234, 234, 234, 0.1);
-      --card-bg: rgba(234, 234, 234, 0.04);
-      --card-hover: rgba(234, 234, 234, 0.07);
-      --accent: rgba(234, 234, 234, 0.18);
+      --bg: #FAFAF8;
+      --fg: #0A0A0A;
+      --fg-muted: rgba(26, 26, 26, 0.5);
+      --fg-faint: rgba(26, 26, 26, 0.25);
+      --divider: rgba(26, 26, 26, 0.06);
+      --card-bg: #FFFFFF;
+      --card-border: rgba(26, 26, 26, 0.05);
+      --card-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 8px 24px rgba(0,0,0,0.04);
+      --card-shadow-hover: 0 2px 8px rgba(0,0,0,0.04), 0 16px 40px rgba(0,0,0,0.07);
+      --founder-bg: rgba(26, 26, 26, 0.03);
+      --founder-border: rgba(26, 26, 26, 0.06);
+      --founder-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 8px 24px rgba(0,0,0,0.04);
+      --btn-bg: #0A0A0A;
+      --btn-fg: #FAFAF8;
     }
 
-    html {
-      scroll-behavior: smooth;
+    /* ── Dark ── */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0A0A0A;
+        --fg: #EAEAEA;
+        --fg-muted: rgba(234, 234, 234, 0.5);
+        --fg-faint: rgba(234, 234, 234, 0.25);
+        --divider: rgba(234, 234, 234, 0.06);
+        --card-bg: rgba(234, 234, 234, 0.04);
+        --card-border: rgba(234, 234, 234, 0.06);
+        --card-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.15);
+        --card-shadow-hover: 0 2px 8px rgba(0,0,0,0.15), 0 16px 40px rgba(0,0,0,0.25);
+        --founder-bg: rgba(234, 234, 234, 0.04);
+        --founder-border: rgba(234, 234, 234, 0.06);
+        --founder-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.15);
+        --btn-bg: #EAEAEA;
+        --btn-fg: #0A0A0A;
+      }
     }
 
     body {
-      background-color: var(--bg);
-      color: var(--fg);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
       font-size: 16px;
       line-height: 1.6;
+      background-color: var(--bg);
+      color: var(--fg);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* ── Layout ── */
-    .container {
-      width: 100%;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    section {
-      padding: 96px 0;
-    }
-
     /* ── Hero ── */
-    #hero {
+    .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 64px 24px;
       text-align: center;
-      animation: fadeIn 1s ease both;
     }
 
     .hero-inner {
@@ -78,12 +90,17 @@
       flex-direction: column;
       align-items: center;
       gap: 28px;
+      animation: heroFade 1s ease both;
     }
 
     .hero-logo {
       width: 72px;
       height: 72px;
       flex-shrink: 0;
+    }
+
+    .hero-logo path {
+      fill: var(--fg);
     }
 
     .hero-wordmark {
@@ -95,154 +112,248 @@
       line-height: 1;
     }
 
-    .hero-tagline {
-      font-size: clamp(14px, 2.2vw, 18px);
-      color: var(--fg-muted);
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      max-width: 480px;
-    }
-
     .hero-divider {
       width: 40px;
       height: 1px;
-      background: var(--accent);
+      background: var(--divider);
       margin: 4px auto 0;
     }
 
-    /* ── Section headings ── */
-    .section-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+    .hero-tagline {
+      font-size: clamp(14px, 2.2vw, 18px);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      max-width: 480px;
       color: var(--fg-muted);
-      margin-bottom: 40px;
+    }
+
+    @keyframes heroFade {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Scroll Reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal-d4 { transition-delay: 0.4s; }
+
+    /* ── Intro Bridge ── */
+    .intro {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 24px;
+    }
+
+    .intro-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .intro p {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(22px, 3.5vw, 32px);
+      line-height: 1.5;
+      color: var(--fg-muted);
+      font-weight: 400;
     }
 
     /* ── Services ── */
-    #services {
-      border-top: 1px solid var(--border);
+    .services {
+      padding: 40px 24px 100px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fg-faint);
+      margin-bottom: 40px;
+      text-align: center;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
 
     .service-card {
       background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 32px 28px;
-      transition: background 0.2s ease, border-color 0.2s ease;
+      border-radius: 16px;
+      padding: 36px 32px;
+      border: 1px solid var(--card-border);
+      box-shadow: var(--card-shadow);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
 
     .service-card:hover {
-      background: var(--card-hover);
-      border-color: var(--accent);
+      box-shadow: var(--card-shadow-hover);
+      transform: translateY(-2px);
     }
 
     .service-card h3 {
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 600;
-      letter-spacing: 0.01em;
       margin-bottom: 10px;
       color: var(--fg);
     }
 
     .service-card p {
-      font-size: 14px;
+      font-size: 15px;
+      line-height: 1.7;
       color: var(--fg-muted);
-      line-height: 1.65;
     }
 
-    /* ── About ── */
-    #about {
-      border-top: 1px solid var(--border);
+    /* ── Founder ── */
+    .founder-section {
+      padding: 60px 24px 100px;
+      max-width: 880px;
+      margin: 0 auto;
     }
 
-    .about-text {
-      font-size: clamp(15px, 2vw, 17px);
-      color: var(--fg-muted);
+    .founder-card {
+      background: var(--founder-bg);
+      border-radius: 16px;
+      padding: 48px 44px;
+      border: 1px solid var(--founder-border);
+      box-shadow: var(--founder-shadow);
+    }
+
+    .founder-card-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .founder-name {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--fg);
+    }
+
+    .founder-role {
+      font-size: 13px;
+      margin-bottom: 24px;
+      color: var(--fg-faint);
+    }
+
+    .founder-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .founder-links a {
+      font-size: 13px;
+      text-decoration: none;
+      color: var(--fg-faint);
+      transition: color 0.15s ease;
+    }
+
+    .founder-links a:hover {
+      color: var(--fg);
+    }
+
+    .founder-bio {
+      font-size: 15px;
       line-height: 1.8;
-      max-width: 680px;
+      color: var(--fg-muted);
+    }
+
+    .founder-bio p + p {
+      margin-top: 14px;
+    }
+
+    .founder-bio em {
+      font-family: 'Newsreader', serif;
+      font-size: 16px;
     }
 
     /* ── Contact ── */
-    #contact {
-      border-top: 1px solid var(--border);
+    .contact {
+      min-height: 45vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
       text-align: center;
     }
 
-    .contact-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+    .contact-text {
+      font-size: 15px;
+      color: var(--fg-muted);
+      margin-bottom: 28px;
+      line-height: 1.7;
+      max-width: 420px;
     }
 
-    .contact-link {
+    .contact-btn {
       display: inline-block;
       font-size: 16px;
-      font-weight: 500;
-      color: var(--fg);
+      font-weight: 600;
+      color: var(--btn-fg);
       text-decoration: none;
+      padding: 16px 40px;
+      background: var(--btn-bg);
+      border-radius: 8px;
       letter-spacing: 0.01em;
-      padding: 14px 32px;
-      border: 1px solid var(--accent);
-      border-radius: 6px;
-      transition: background 0.2s ease, border-color 0.2s ease;
+      transition: opacity 0.2s ease;
     }
 
-    .contact-link:hover {
-      background: var(--card-hover);
-      border-color: var(--fg-muted);
-    }
-
-    .contact-note {
-      font-size: 13px;
-      color: var(--fg-muted);
+    .contact-btn:hover {
+      opacity: 0.85;
     }
 
     /* ── Footer ── */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 0;
+      padding: 32px 24px;
       text-align: center;
-    }
-
-    footer p {
+      border-top: 1px solid var(--divider);
       font-size: 13px;
-      color: var(--fg-muted);
-      letter-spacing: 0.01em;
-    }
-
-    /* ── Animations ── */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      color: var(--fg-faint);
     }
 
     /* ── Responsive ── */
-    @media (max-width: 600px) {
-      section {
-        padding: 72px 0;
-      }
-
+    @media (max-width: 640px) {
       .services-grid {
         grid-template-columns: 1fr;
       }
 
       .service-card {
-        padding: 24px 20px;
+        padding: 28px 24px;
+      }
+
+      .founder-card {
+        padding: 32px 24px;
+      }
+
+      .founder-card-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .founder-links {
+        flex-direction: row;
+        gap: 16px;
       }
     }
   </style>
@@ -250,11 +361,11 @@
 <body>
 
   <!-- Hero -->
-  <section id="hero">
+  <section class="hero">
     <div class="hero-inner">
-      <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024" aria-label="Mavencraft logo" role="img">
-        <path fill="#EAEAEA" d="M856.444 389.954C857.401 390.932 856.948 425.487 856.952 430.692L856.981 516.44L857.027 774.426C830.358 773.848 803.68 773.86 777.012 774.46C777.702 760.559 777.22 745.633 777.191 731.599L777.143 659.64L777.178 583.75C777.221 567.409 777.703 551.882 776.983 535.505C765.484 543.464 752.084 551.402 740.134 558.902L676.342 598.999L512.114 702.508C480.187 682.116 448.134 661.922 415.956 641.927L246.422 535.493C246.698 549.429 246.416 563.982 246.417 577.987L246.446 662.75L246.485 774.492C237.453 773.821 228.174 774.619 219.128 774.365C201.731 773.875 183.3 775.298 166.01 774.241L166.04 530.897L165.982 441.732C165.966 424.746 165.603 406.489 166.16 389.669C170.398 391.859 177.33 396.619 181.709 399.355L206.615 414.625L286.536 464.497C361.251 511.232 437.587 557.961 511.587 605.591C540.887 587.791 570.334 568.957 599.43 550.738L760.547 449.873L817.234 414.385C830.354 406.107 842.979 397.73 856.444 389.954Z"/>
-        <path fill="#EAEAEA" d="M856.471 206.989C857.649 208.671 856.89 297.651 856.42 305.028C849.928 309.913 840.519 315.417 833.45 319.795L800.014 340.721L682.52 414.571L568.796 486.117L534.678 507.794C527.515 512.349 519.352 517.821 511.879 521.585C499.94 515.008 484.102 504.329 472.181 496.85L394.635 448.157L168.268 306.547C167.768 306.254 167.205 305.906 166.864 305.422C164.034 301.398 165.849 218.188 166.11 207.016C170.807 209.447 177.744 214.182 182.472 217.159C192.075 223.194 201.708 229.179 211.373 235.114L306.7 293.518L441.607 376.752C463.908 390.508 490.378 405.939 511.957 420.3C527.336 410.067 545.965 399.133 561.897 389.297L659.494 329.086L789.029 248.899C811.535 234.928 833.738 220.584 856.471 206.989Z"/>
+      <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-label="Mavencraft logo" role="img">
+        <path d="M856.444 389.954C857.401 390.932 856.948 425.487 856.952 430.692L856.981 516.44L857.027 774.426C830.358 773.848 803.68 773.86 777.012 774.46C777.702 760.559 777.22 745.633 777.191 731.599L777.143 659.64L777.178 583.75C777.221 567.409 777.703 551.882 776.983 535.505C765.484 543.464 752.084 551.402 740.134 558.902L676.342 598.999L512.114 702.508C480.187 682.116 448.134 661.922 415.956 641.927L246.422 535.493C246.698 549.429 246.416 563.982 246.417 577.987L246.446 662.75L246.485 774.492C237.453 773.821 228.174 774.619 219.128 774.365C201.731 773.875 183.3 775.298 166.01 774.241L166.04 530.897L165.982 441.732C165.966 424.746 165.603 406.489 166.16 389.669C170.398 391.859 177.33 396.619 181.709 399.355L206.615 414.625L286.536 464.497C361.251 511.232 437.587 557.961 511.587 605.591C540.887 587.791 570.334 568.957 599.43 550.738L760.547 449.873L817.234 414.385C830.354 406.107 842.979 397.73 856.444 389.954Z"/>
+        <path d="M856.471 206.989C857.649 208.671 856.89 297.651 856.42 305.028C849.928 309.913 840.519 315.417 833.45 319.795L800.014 340.721L682.52 414.571L568.796 486.117L534.678 507.794C527.515 512.349 519.352 517.821 511.879 521.585C499.94 515.008 484.102 504.329 472.181 496.85L394.635 448.157L168.268 306.547C167.768 306.254 167.205 305.906 166.864 305.422C164.034 301.398 165.849 218.188 166.11 207.016C170.807 209.447 177.744 214.182 182.472 217.159C192.075 223.194 201.708 229.179 211.373 235.114L306.7 293.518L441.607 376.752C463.908 390.508 490.378 405.939 511.957 420.3C527.336 410.067 545.965 399.133 561.897 389.297L659.494 329.086L789.029 248.899C811.535 234.928 833.738 220.584 856.471 206.989Z"/>
       </svg>
 
       <div>
@@ -262,65 +373,92 @@
         <div class="hero-divider"></div>
       </div>
 
-      <p class="hero-tagline">AI Strategy. Built on Expertise. Delivered with Craft.</p>
+      <p class="hero-tagline">Production-grade AI. Engineered, not assembled.</p>
+    </div>
+  </section>
+
+  <!-- Intro Bridge -->
+  <section class="intro">
+    <div class="intro-inner reveal">
+      <p>We build AI systems that hold up in production &mdash; agentic workflows, document intelligence, and integration engineering for teams that need substance over slides.</p>
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services">
-    <div class="container">
-      <p class="section-label">Services</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>AI Strategy</h3>
-          <p>Strategic AI adoption roadmaps tailored to your business — identifying high-value opportunities, mitigating risk, and sequencing execution.</p>
-        </div>
-        <div class="service-card">
-          <h3>Technical Architecture</h3>
-          <p>System design for AI-native applications — from data pipelines and model serving to evaluation frameworks and production observability.</p>
-        </div>
-        <div class="service-card">
-          <h3>Implementation</h3>
-          <p>Hands-on engineering and deployment of production AI systems — building what gets specced, not just scoping it.</p>
-        </div>
-        <div class="service-card">
-          <h3>Advisory</h3>
-          <p>Fractional CTO and technical advisor engagements — senior AI engineering perspective embedded in your team, on your timeline.</p>
-        </div>
+  <section class="services">
+    <p class="section-label reveal">What We Build</p>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-d1">
+        <h3>Agentic Workflows</h3>
+        <p>Long-running agents, multi-step orchestration, tool execution, and autonomous operations. Systems that do real work, not demos.</p>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <h3>AI Integration</h3>
+        <p>Embedding AI capabilities into existing products and workflows. We work with what you have, not a greenfield fantasy.</p>
+      </div>
+      <div class="service-card reveal reveal-d3">
+        <h3>Document Intelligence</h3>
+        <p>Extracting structured data from unstructured documents at scale. OCR, classification, entity extraction, and validation pipelines.</p>
+      </div>
+      <div class="service-card reveal reveal-d4">
+        <h3>Technical Advisory</h3>
+        <p>Architecture review, build-vs-buy decisions, production readiness. Senior engineering perspective on your timeline.</p>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <p class="section-label">About</p>
-      <p class="about-text">
-        Mavencraft is an AI consulting practice founded by an engineer who builds production AI systems. We bring deep technical expertise to organizations navigating AI adoption — from strategy through deployment. We work with teams who want substance over slides: rigorous thinking, clean architecture, and systems that hold up in production.
-      </p>
+  <!-- Founder -->
+  <section class="founder-section">
+    <p class="section-label reveal">Founder</p>
+    <div class="founder-card reveal">
+      <div class="founder-card-inner">
+        <div>
+          <p class="founder-name">Harshit Mittal</p>
+          <p class="founder-role">Engineer</p>
+          <div class="founder-links">
+            <a href="https://github.com/harsh-mittal" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/harsh-mittal" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://harshmittal.net" target="_blank" rel="noopener">Blog</a>
+          </div>
+        </div>
+        <div class="founder-bio">
+          <p><em>Maven</em> means expert. <em>Craft</em> means giving a damn about how it's built.</p>
+          <p>I'm an engineer who cares about the boring parts &mdash; error handling, evaluation pipelines, graceful degradation, the 3 AM edge case nobody thought about. My production work spans agentic workflows that run autonomously for days, document intelligence systems processing thousands of pages, and the observability infrastructure that keeps it all honest.</p>
+          <p>I started Mavencraft because I kept seeing the same pattern: companies build AI demos that work beautifully in a meeting, then wonder why they fall apart in production. The answer is almost always engineering discipline &mdash; the same discipline that makes any software reliable. AI isn't magic. It's software. Build it like software.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact-inner">
-        <p class="section-label">Get in Touch</p>
-        <a class="contact-link" href="mailto:contact@mavencraft.dev">contact@mavencraft.dev</a>
-        <p class="contact-note">Available for new engagements.</p>
-      </div>
+  <section class="contact reveal">
+    <div>
+      <p class="contact-text">No forms. No sales calls. Just an email describing what you need and I'll tell you honestly if I can help.</p>
+      <a class="contact-btn" href="mailto:contact@mavencraft.dev">contact@mavencraft.dev</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="container">
+    <div>
       <p>&copy; <span id="year"></span> Mavencraft. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      observer.observe(el);
+    });
   </script>
 
 </body>
